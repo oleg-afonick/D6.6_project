@@ -9,7 +9,7 @@ class Author(models.Model):
     author_rating = models.IntegerField(default=0)
 
     def __str__(self):
-        return f'{self.user.username}. Rating: {self.author_rating}'
+        return self.user.username
 
     def update_rating(self):
         author_posts_rating = Post.objects.filter(author_id=self.pk).aggregate(
@@ -54,7 +54,7 @@ class Post(models.Model):
         return self.post_text
 
     def __str__(self):
-        return self.post_title
+        return f'{self.post_title}: {self.post_text}'
 
 
 class PostCategory(models.Model):
