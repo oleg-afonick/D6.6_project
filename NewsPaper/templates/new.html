@@ -1,11 +1,24 @@
 {% extends 'flatpages/default.html' %}
 
-
 {% block title %}
 News
 {% endblock title %}
 
-
 {% block content %}
-<h1>{{ new }}</h1>
+<h3>News {{ new.pk }}</h3>
+
+<table style="border: 1px solid #afabab;">
+    <tr style="border: 1px solid #afabab;">
+        <td style="border: 1px solid #afabab;">Заголовок</td>
+        <td style="border: 1px solid #afabab;">Дата публикации</td>
+        <td style="border: 1px solid #afabab;">Тип</td>
+        <td style="border: 1px solid #afabab;">Текст</td>
+    </tr>
+    <tr style="border: 1px solid #10be10;">
+        <td style="border: 1px solid #afabab;">{{ new.post_title }}</td>
+        <td style="border: 1px solid #afabab;">{{ new.date_creation }}</td>
+        <td style="border: 1px solid #afabab;">{{ new.post_type }}</td>
+        <td style="border: 1px solid #afabab;">{{ new.post_text }}</td>
+    </tr>
+</table>
 {% endblock content %}
