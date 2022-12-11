@@ -1,6 +1,5 @@
 from django.views.generic import ListView, DetailView
 from .models import Post
-from datetime import datetime
 
 
 class NewsList(ListView):
@@ -11,7 +10,6 @@ class NewsList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['time_now'] = datetime.utcnow()
         context['next_sale'] = None
         return context
 
